@@ -1,5 +1,7 @@
 const { v4: uuid} = require("uuid")
 const foodModel = require('../models/food.model');
+const likeModel = require('../models/likes.model');
+
 const storageService = require('../services/storage.service');
 
 async function createFood(req, res){
@@ -29,7 +31,40 @@ async function getFoodItems(req, res) {
     });
 }
 
+
+
+async function likeFood(req, res) {
+    const foodId=req.body;
+    const user=req.user;
+    const isAlreadyLike = await likeModel.findOne({
+        user:user._id, 
+        food:foodId
+    });
+
+    if(isAlreadyLike){
+       await likeModel.deleteOne({
+        user:user._id, 
+        food:foodId
+    });
+    return res.status(200).json({
+        message: "Food item unliked successfully" 
+    });
+    }
+
+    const like = await likeModel.create({
+        user: user._id,
+        food: foodId
+    });
+    res.status(201).json({
+        message: "Food item liked successfully",
+        like
+    })
+}
+
+
+
 module.exports = {
     createFood,
     getFoodItems,
+    likeFood,
 };
