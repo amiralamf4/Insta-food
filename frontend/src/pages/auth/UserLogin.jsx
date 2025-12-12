@@ -7,20 +7,21 @@ const UserLogin = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const  handleSubmit = (e) => {
+  const  handleSubmit = async (e) => {
     e.preventDefault();   
     const userData = {
       email,
       password
     }
-    const response = axios.post("http://localhost:3000/api/auth/user/login",userData, {withCredentials:true}); 
-    const data = response.data;
+    const response = await axios.post("http://localhost:3000/api/auth/user/login",userData, {withCredentials:true}); 
+    // console.log(response.data);
+     
     navigate("/home");
 
   } 
 
   return (
-    <div className="auth-page w-full h-screen flex justify-center items-center bg-orange-200">
+    <div className="auth-page w-full h-screen flex justify-center items-center">
       <div className="auth-card bg-orange-100 w-[80vw] sm:w-[60vw] lg:w-1/4 p-10 rounded-3xl shadow-lg">
         <h1 className="brand text-3xl text-orange-500 font-semibold text-center">InstaZomato</h1>
         <h2 className='text-2xl text-gray-600 font-medium text-center mt-3'>Welcome back</h2>

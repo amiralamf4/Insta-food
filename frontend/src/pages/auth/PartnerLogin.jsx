@@ -23,7 +23,7 @@ const PartnerLogin = () => {
   }
 
   return (
-    <div className="auth-page w-full h-screen flex justify-center items-center bg-orange-200">
+    <div className="auth-page w-full h-screen flex justify-center items-center">
       <div className="auth-card bg-orange-100 w-[80vw] p-10 rounded-3xl shadow-lg">
         <h1 className="brand text-3xl text-orange-500 font-semibold text-center">InstaZomato</h1>
         <h2 className='text-2xl text-gray-600 font-medium text-center mt-3'>Partner sign in</h2>

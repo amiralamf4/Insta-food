@@ -5,7 +5,8 @@ const foodSchema = new mongoose.Schema({
     video: {type: String, required: true },
     description: { type: String},
     foodPartner: { type: mongoose.Schema.Types.ObjectId, ref: 'FoodPartner'},
-    LikeCount: { type: Number, default: 0 }
+    LikeCount: { type: Number, default: 0 },
+    saveCount:{type: Number, default: 0 }
 },{
     timestamps: true
 });

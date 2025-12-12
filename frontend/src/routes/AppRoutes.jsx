@@ -7,6 +7,7 @@ import PartnerLogin from '../pages/auth/PartnerLogin.jsx'
 import Home from '../pages/home/Home.jsx'
 import CreateFood from '../pages/food-partner/CreateFood.jsx'
 import Profile from '../pages/food-partner/Profile.jsx'
+import SaveReels from '../pages/save-page/SaveReels.jsx'
 
 const AppRoutes = () => {
   
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/home" element={<Home/>} />
         <Route path="/create-food" element={<CreateFood/>}/>
         <Route path="/food-partner/:id" element={<Profile />} />
+        <Route path="/save-reels" element={<SaveReels/>}/>
       </Routes>
     </Router>
   )

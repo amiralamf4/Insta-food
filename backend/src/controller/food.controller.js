@@ -35,8 +35,8 @@ async function getFoodItems(req, res) {
 
 
 async function likeFood(req, res) {
-    const foodId=req.body;
-    const user=req.user;
+    const {foodId}=req.body;
+    const user = req.user;
     const isAlreadyLike = await likeModel.findOne({
         user:user._id, 
         food:foodId
@@ -85,6 +85,9 @@ async function saveFood(req, res) {
             user: user._id,
             food: foodId
         });
+        await foodModel.findByIdAndUpdate(foodId,{
+            $inc: {saveCount: -1}
+        })
         return res.status(200).json({
             message: "Food item unsaved successfully"
         });
@@ -93,6 +96,9 @@ async function saveFood(req, res) {
         user: user._id,
         food: foodId
     });
+    await foodModel.findByIdAndUpdate(foodId,{
+            $inc: {saveCount: 1}
+        })
     res.status(201).json({
         message: "Food item saved successfully",
         save
