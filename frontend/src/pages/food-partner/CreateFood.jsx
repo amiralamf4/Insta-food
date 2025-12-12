@@ -10,7 +10,6 @@ const CreateFood = () => {
   const fileRef = useRef(null)
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
-  const [price, setPrice] = useState('')
   const [video, setVideo] = useState(null)
   const [error, setError] = useState('')
   const [dragActive, setDragActive] = useState(false)
@@ -67,7 +66,6 @@ const CreateFood = () => {
     const formData = new FormData()
     formData.append('name', name)
     formData.append('description', description)
-    // formData.append('price', price)
     if (video?.file) formData.append('video', video.file)
 
       const res= await axios.post('http://localhost:3000/api/food/', formData, {
@@ -157,25 +155,12 @@ const CreateFood = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-200">Price (optional)</label>
-                  <input
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    className="mt-2 w-full rounded-md bg-slate-900 border border-slate-700 px-3 py-2 text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                    placeholder="e.g. 7.99"
-                  />
-                </div>
-              </div>
-
               <div className="flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => {
                     setName('')
                     setDescription('')
-                    setPrice('')
                     clearVideo()
                     setError('')
                   }}
@@ -183,9 +168,7 @@ const CreateFood = () => {
                 >
                   Reset
                 </button>
-
-                {/* Save draft removed as requested */}
-
+ 
                 <button
                   type="submit"
                   disabled={saving}

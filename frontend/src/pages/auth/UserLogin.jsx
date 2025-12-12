@@ -48,6 +48,9 @@ const UserLogin = () => {
         <div className="alt mt-1">New here? <Link to="/user/register">Create an account</Link></div>
         </div>
       </div>
+
+       {/* Background Img */}
+      <div className=" fixed -z-50 w-full h-screen bg-[url('/wallpaper.png')] bg-cover bg-center bg-no-repeat"></div>
     </div>
   )
 }

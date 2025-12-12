@@ -86,6 +86,9 @@ const PartnerRegister = () => {
         <div className="alt mt-1">Already have a user account? <Link to="/user/login">Sign in as user</Link></div>
         </div>
       </div>
+
+       {/* Background Img */}
+      <div className=" fixed -z-50 w-full h-screen bg-[url('/wallpaper.png')] bg-cover bg-center bg-no-repeat"></div>
     </div>
   )
 }

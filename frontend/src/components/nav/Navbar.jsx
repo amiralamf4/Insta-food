@@ -6,7 +6,7 @@ import { IoBookmarkOutline } from "react-icons/io5";
 
 const Navbar = () => {
   return (
-    <div className=' absolute bottom-0 items-center w-106 h-14 flex justify-evenly bg-transparent'>
+    <div className=' fixed bottom-0 items-center w-106 h-14 flex justify-evenly bg-transparent'>
         <Link to="/home"><AiOutlineHome  size={24}/></Link>
         <Link to="/save-reels"><IoBookmarkOutline size={24}/></Link>
     </div>

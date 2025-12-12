@@ -71,6 +71,9 @@ const UserRegister = () => {
         <div className="alt mt-4">Already have an account? <Link to="/user/login">Log in</Link></div>
         <div className="alt mt-1"><Link to="/partner/register">Register as food partner</Link></div>
       </div>
+
+       {/* Background Img */}
+      <div className=" fixed -z-50 w-full h-screen bg-[url('/wallpaper.png')] bg-cover bg-center bg-no-repeat"></div>
     </div>
   )
 }

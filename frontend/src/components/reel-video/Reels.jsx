@@ -102,7 +102,7 @@ const Reels = () => {
                 (<div className="text-center text-gray-300 mt-20">Loading reels...</div>)}
 
             {videos.map((item) => (
-                <section key={item._id} className="w-full h-screen relative overflow-hidden scroll-snap-align-start flex items-center justify-center bg-black">
+                <section key={item._id} className="w-full h-screen relative overflow-hidden scroll-snap-align-start flex items-center justify-center bg-bl">
                     <video onClick={videoHandel} className="h-screen w-106  object-cover  md:h-[98vh] md:rounded-3xl"
                         src={item.video}
                         loop
