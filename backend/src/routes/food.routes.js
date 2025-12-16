@@ -16,4 +16,8 @@ router.post('/like', authMiddleware.authUserMiddleware, foodController.likeFood)
 
 router.post('/save', authMiddleware.authUserMiddleware, foodController.saveFood);
 
+// get save videos on user id
+
+router.get('/save', authMiddleware.authUserMiddleware, foodController.getSavevideos)
+
 module.exports = router;

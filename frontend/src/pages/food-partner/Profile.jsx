@@ -13,6 +13,8 @@ const Profile = () => {
   const [profile, setProfile] = useState(null)
   const [videos, setVideos] = useState([])
 
+  
+
   useEffect(() => {
     axios.get(`http://localhost:3000/api/food-partner/${id}`, { withCredentials: true })
       .then(response => {
@@ -34,7 +36,9 @@ const Profile = () => {
 
             {/* img */}
             <div className="shrink-0">
-              <div className="w-28 h-28 rounded-full bg-slate-600" />
+              <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-t-green-600 border-x-white border-b-red-600" >
+                <img className='w-full' src="/pfp.jpg" alt="img"/>  
+              </div>
             </div>
 
             {/* Food Partner details */}

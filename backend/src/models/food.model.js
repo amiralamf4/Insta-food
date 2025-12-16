@@ -6,11 +6,12 @@ const foodSchema = new mongoose.Schema({
     description: { type: String},
     foodPartner: { type: mongoose.Schema.Types.ObjectId, ref: 'FoodPartner'},
     LikeCount: { type: Number, default: 0 },
-    saveCount:{type: Number, default: 0 }
+    saveCount:{type: Number, default: 0 },
+    foodName:{type: String}
 },{
     timestamps: true
 });
 
-const foodModel = mongoose.model('Food', foodSchema);
+const foodModel = mongoose.model('food', foodSchema);
 
 module.exports = foodModel;

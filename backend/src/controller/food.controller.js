@@ -108,6 +108,19 @@ async function saveFood(req, res) {
 }
 
 
+async function getSavevideos(req, res){
+    const user = req.user;
+    const saveFoods = await saveModel.find({user: user._id}).populate('food');
+
+    if(!saveFoods || saveFoods.length ===0){
+        return res.status(404).json({message: "No save videos found"})
+    }
+    res.status(200).json({
+        message: "Save foods retrieved successfuly",
+        saveFoods
+    })
+}
+
 
 
 module.exports = {
@@ -115,4 +128,5 @@ module.exports = {
     getFoodItems,
     likeFood,
     saveFood,
+    getSavevideos
 };
