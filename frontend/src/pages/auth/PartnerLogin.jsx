@@ -43,7 +43,7 @@ const PartnerLogin = () => {
             onChange={(e)=>setPassword(e.target.value)} value={password}
             placeholder="••••••••" />
           </div>
-          <button className="submit">Sign in</button>
+          <button className="submit bg-orange-500 p-2 rounded-2xl text-xl text-white font-semibold">Sign in</button>
         </form>
         <div>
         <div className="alt">Don't have an account? <Link to="/partner/register">Register</Link></div>
