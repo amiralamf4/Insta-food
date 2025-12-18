@@ -22,7 +22,7 @@ const SaveReels = () => {
           description: item.food.description,
           LikeCount: item.food.LikeCount,
           saveCount: item.food.saveCount,
-          id: item.food._id,
+          foodPartner_id: item.food.foodPartner._id,
         }))
         console.log(response.data.saveFoods);
 

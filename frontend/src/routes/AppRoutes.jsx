@@ -13,7 +13,7 @@ const AppRoutes = () => {
   
   return (
     <Router>
-      <Routes>
+      <Routes> 
         <Route path="/" element={<Navigate to="/user/login" replace />} />
         <Route path="/user/register" element={<UserRegister/>} />
         <Route path="/user/login" element={<UserLogin/>} />
