@@ -1,3 +1,4 @@
 
-.evn
+backend/.env
+.env
 node_modules
